@@ -59,6 +59,7 @@
 // Support for host power management (suspend & wakeup)
 #include "Kaleidoscope-HostPowerManagement.h"
 
+#include "svorak.h"
 
 /** This 'enum' is a list of all the macros used by the Model 01's firmware
   * The names aren't particularly important. What is important is that each
@@ -121,7 +122,7 @@ enum { MACRO_VERSION_INFO,
   *
   */
 
-enum { QWERTY, NUMPAD, FUNCTION }; // layers
+enum { SVORAK, NUMPAD, FUNCTION }; // layers
 
 /* This comment temporarily turns off astyle's indent enforcement
  *   so we can make the keymaps actually resemble the physical key layout better
@@ -130,19 +131,19 @@ enum { QWERTY, NUMPAD, FUNCTION }; // layers
 
 const Key keymaps[][ROWS][COLS] PROGMEM = {
 
-  [QWERTY] = KEYMAP_STACKED
-  (___,          Key_1, Key_2, Key_3, Key_4, Key_5, Key_LEDEffectNext,
-   Key_Backtick, Key_Q, Key_W, Key_E, Key_R, Key_T, Key_Tab,
-   Key_PageUp,   Key_A, Key_S, Key_D, Key_F, Key_G,
-   Key_PageDown, Key_Z, Key_X, Key_C, Key_V, Key_B, Key_Escape,
-   Key_LeftControl, Key_Backspace, Key_LeftGui, Key_LeftShift,
+  [SVORAK] = KEYMAP_STACKED
+  (___,             Svorak_1,        Svorak_2,  Svorak_3,  Svorak_4, Svorak_5, Svorak_Period,
+   Svorak_Quote,    Svorak_AO,       Svorak_AE, Svorak_OE, Svorak_P, Svorak_Y, Svorak_Tab,
+   Svorak_Backtick, Svorak_A,        Svorak_O,  Svorak_E,  Svorak_U, Svorak_I,
+   Svorak_LeftGui,  Svorak_LessThan, Svorak_Q,  Svorak_J,  Svorak_K, Svorak_X, Svorak_Escape,
+   Svorak_LeftControl, Svorak_Backspace, Svorak_LeftGui, Svorak_LeftShift,
    ShiftToLayer(FUNCTION),
 
-   M(MACRO_ANY),  Key_6, Key_7, Key_8,     Key_9,         Key_0,         LockLayer(NUMPAD),
-   Key_Enter,     Key_Y, Key_U, Key_I,     Key_O,         Key_P,         Key_Equals,
-                  Key_H, Key_J, Key_K,     Key_L,         Key_Semicolon, Key_Quote,
-   Key_RightAlt,  Key_N, Key_M, Key_Comma, Key_Period,    Key_Slash,     Key_Minus,
-   Key_RightShift, Key_LeftAlt, Key_Spacebar, Key_RightControl,
+   Svorak_Comma,      Svorak_6, Svorak_7, Svorak_8, Svorak_9, Svorak_0, LockLayer(NUMPAD),
+   Svorak_Enter,      Svorak_F, Svorak_G, Svorak_C, Svorak_R, Svorak_L, Svorak_Plus,
+                      Svorak_D, Svorak_H, Svorak_T, Svorak_N, Svorak_S, Svorak_Caret,
+   Svorak_RightAltGr, Svorak_B, Svorak_M, Svorak_W, Svorak_V, Svorak_Z, Svorak_Minus,
+   Svorak_RightShift, Svorak_LeftAlt, Svorak_Spacebar, Svorak_RightControl,
    ShiftToLayer(FUNCTION)),
 
 
